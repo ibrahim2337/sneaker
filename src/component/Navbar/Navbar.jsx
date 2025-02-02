@@ -19,36 +19,36 @@ const Navbar = () => {
   const handleLogout = () => setIsLoggedIn(false);
 
   return (
-    <nav className="bg-white shadow-md relative">
+    <nav className=" shadow-md relative z-10 bg-opacity-10 h-20 text-white bg-black">
       <div className="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
         {/* Logo */}
-        <a href="/" className="text-2xl font-bold text-gray-800">
+        <a href="/" className="text-2xl font-bold ">
           Cloth & Co.
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <a href="/" className="text-gray-800 hover:text-gray-600">
+          <a href="/" className="">
             Home
           </a>
-          <a href="/shop" className="text-gray-800 hover:text-gray-600">
+          <a href="/shop" className="">
             Shop
           </a>
-          <a href="/categories" className="text-gray-800 hover:text-gray-600">
+          <a href="/categories" className="">
             Categories
           </a>
-          <a href="/deals" className="text-gray-800 hover:text-gray-600">
-            Deals
+          <a href="/blog" className="">
+            Blog
+          </a>
+          <a href="/contact" className="">
+            Contact
           </a>
         </div>
 
         {/* Right Section */}
         <div className="flex items-center space-x-4">
           {/* Search Icon */}
-          <button
-            onClick={toggleSearch}
-            className="text-gray-800 hover:text-gray-600"
-          >
+          <button onClick={toggleSearch} className=" text-white">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -65,7 +65,7 @@ const Navbar = () => {
           </button>
 
           {/* Shopping Cart */}
-          <a href="/cart" className="text-gray-800 hover:text-gray-600">
+          <a href="/cart" className="text-white">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -86,7 +86,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={toggleProfile}
-                className="text-gray-800 hover:text-gray-600 focus:outline-none"
+                className="text-white focus:outline-none"
               >
                 <svg
                   className="h-6 w-6"
@@ -128,17 +128,14 @@ const Navbar = () => {
           ) : (
             <button
               onClick={handleLogin}
-              className="bg-blue-500 text-white lg:px-7 px-4 py-2 rounded-md hover:bg-blue-600"
+              className="bg-gradient-to-r from-[#81baa0] to-[#46a39c]  lg:px-7 px-4 py-2 rounded-md "
             >
               Login
             </button>
           )}
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden text-gray-800 hover:text-gray-600"
-          >
+          <button onClick={toggleMenu} className="md:hidden text-white">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -162,37 +159,28 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2"
+            className="w-full px-4 py-2 border border-white text-black rounded-lg focus:outline-none focus:ring-2"
           />
         </div>
       )}
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden text-center bg-white shadow-md p-4">
-          <a
-            href="/"
-            className="block text-gray-800 hover:bg-gray-100 p-2 rounded"
-          >
+        <div className="md:hidden text-center text-white bg-[#232442] shadow-md p-4">
+          <a href="/" className="block  p-2 rounded">
             Home
           </a>
-          <a
-            href="/shop"
-            className="block text-gray-800 hover:bg-gray-100 p-2 rounded"
-          >
+          <a href="/shop" className="block p-2 ">
             Shop
           </a>
-          <a
-            href="/categories"
-            className="block text-gray-800 hover:bg-gray-100 p-2 rounded"
-          >
+          <a href="/categories" className="block p-2">
             Categories
           </a>
-          <a
-            href="/deals"
-            className="block text-gray-800 hover:bg-gray-100 p-2 rounded"
-          >
-            Deals
+          <a href="/blog" className="block p-2">
+            Blog
+          </a>
+          <a href="/contact" className="block p-2">
+            Contact
           </a>
         </div>
       )}
