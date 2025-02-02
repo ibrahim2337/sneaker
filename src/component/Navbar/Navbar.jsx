@@ -8,8 +8,14 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleProfile = () => setIsProfileOpen(!isProfileOpen);
-  const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
-  const handleLogin = () => setIsLoggedIn(true);
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    console.log("Search modal open:", !isSearchOpen); // Debug log
+  };
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    setIsProfileOpen(true); // Open profile menu after login
+  };
   const handleLogout = () => setIsLoggedIn(false);
 
   return (
@@ -152,11 +158,11 @@ const Navbar = () => {
 
       {/* Search Modal */}
       {isSearchOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md p-4">
+        <div className="absolute top-full left-0 w-full shadow-md p-4 z-50">
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2"
           />
         </div>
       )}
