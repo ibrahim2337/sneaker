@@ -22,7 +22,6 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           {/* Left Section: Logo and Menu */}
           <div className="flex items-center">
-            {/* Logo */}
             <a href="/" className="text-2xl font-bold text-gray-800">
               Cloth & Co.
             </a>
