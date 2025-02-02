@@ -4,83 +4,85 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleProfile = () => setIsProfileOpen(!isProfileOpen);
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
+  const handleLogin = () => setIsLoggedIn(true);
+  const handleLogout = () => setIsLoggedIn(false);
 
   return (
     <nav className="bg-white shadow-md relative">
-      <div className="max-w-7xl mx-auto px-4 ">
-        <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
-          <a href="/" className="text-2xl font-bold text-gray-800">
-            Cloth & Co.
+      <div className="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
+        {/* Logo */}
+        <a href="/" className="text-2xl font-bold text-gray-800">
+          Cloth & Co.
+        </a>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6">
+          <a href="/" className="text-gray-800 hover:text-gray-600">
+            Home
+          </a>
+          <a href="/shop" className="text-gray-800 hover:text-gray-600">
+            Shop
+          </a>
+          <a href="/categories" className="text-gray-800 hover:text-gray-600">
+            Categories
+          </a>
+          <a href="/deals" className="text-gray-800 hover:text-gray-600">
+            Deals
+          </a>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex items-center space-x-4">
+          {/* Search Icon */}
+          <button
+            onClick={toggleSearch}
+            className="text-gray-800 hover:text-gray-600"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
+
+          {/* Shopping Cart */}
+          <a href="/cart" className="text-gray-800 hover:text-gray-600">
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
           </a>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center space-x-6">
-            <a href="/" className="text-gray-800 hover:text-gray-600">
-              Home
-            </a>
-            <a href="/shop" className="text-gray-800 hover:text-gray-600">
-              Shop
-            </a>
-            <a href="/categories" className="text-gray-800 hover:text-gray-600">
-              Categories
-            </a>
-            <a href="/deals" className="text-gray-800 hover:text-gray-600">
-              Deals
-            </a>
-          </div>
-
-          {/* Right Section */}
-          <div className="flex items-center space-x-4">
-            {/* Search Icon */}
-            <button
-              onClick={toggleSearch}
-              className="text-gray-800 hover:text-gray-600"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
-
-            {/* Shopping Cart */}
-            <a href="/cart" className="text-gray-800 hover:text-gray-600">
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-            </a>
-
-            {/* Profile Dropdown */}
+          {/* Profile / Login Button */}
+          {isLoggedIn ? (
             <div className="relative">
               <button
                 onClick={toggleProfile}
-                className="flex items-center text-gray-800 hover:text-gray-600 focus:outline-none"
+                className="text-gray-800 hover:text-gray-600 focus:outline-none"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -108,36 +110,43 @@ const Navbar = () => {
                   >
                     Orders
                   </a>
-                  <a
-                    href="/logout"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  <button
+                    onClick={handleLogout}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left"
                   >
                     Logout
-                  </a>
+                  </button>
                 </div>
               )}
             </div>
-
-            {/* Mobile Menu Button */}
+          ) : (
             <button
-              onClick={toggleMenu}
-              className="md:hidden text-gray-800 hover:text-gray-600"
+              onClick={handleLogin}
+              className="bg-blue-500 text-white lg:px-7 px-4 py-2 rounded-md hover:bg-blue-600"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
+              Login
             </button>
-          </div>
+          )}
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-gray-800 hover:text-gray-600"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
