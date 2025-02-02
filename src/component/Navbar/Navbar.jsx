@@ -19,7 +19,7 @@ const Navbar = () => {
   const handleLogout = () => setIsLoggedIn(false);
 
   return (
-    <nav className=" shadow-md relative z-10 bg-opacity-10 h-20 text-white bg-black">
+    <nav className=" shadow-md relative z-10 bg-opacity-95h-20 text-white bg-[#232442]">
       <div className="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
         {/* Logo */}
         <a href="/" className="text-2xl font-bold ">
@@ -128,7 +128,7 @@ const Navbar = () => {
           ) : (
             <button
               onClick={handleLogin}
-              className="bg-gradient-to-r from-[#81baa0] to-[#46a39c]  lg:px-7 px-4 py-2 rounded-md "
+              className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB]  lg:px-7 px-4 py-2 rounded-md "
             >
               Login
             </button>

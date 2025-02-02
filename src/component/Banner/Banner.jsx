@@ -77,8 +77,8 @@ const Banner = () => {
                 <img src={img} alt={`Slide ${index + 1}`} />
               </figure>
               <div className="content">
-                <p className="category">Sport Shoes</p>
-                <h2>NIKE D.0{index + 1}</h2>
+                <p className="category text-white">Sport Shoes</p>
+                <h2 className="text-white">NIKE D.0{index + 1}</h2>
                 <p className="description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
                   facere ipsa blanditiis quidem dignissimos enim quam corrupti
@@ -103,7 +103,7 @@ const Banner = () => {
           </button>
         </div>
         <div className="indicators" ref={dotsRef}>
-          <div className="number">0{active + 1}</div>
+          <div className="number text-white">0{active + 1}</div>
           <ul>
             {images.map((_, index) => (
               <li

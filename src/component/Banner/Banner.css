@@ -5,9 +5,8 @@
 }
 body {
   margin: 0;
-  background-color: #232442;
-  color: #fff;
   font-size: 15px;
+
   font-family: Poppins;
   & * {
     box-sizing: border-box;
@@ -102,12 +101,12 @@ body {
             border: none;
             position: relative;
             &:nth-child(1) {
-              background-image: linear-gradient(to right, #81baa0, #46a39c);
+              background-image: linear-gradient(to right, #81baa0, #48b4bb);
             }
             &:nth-child(2) {
               border: 2px solid transparent;
               background: linear-gradient(#242745, #242745) padding-box,
-                linear-gradient(to right, #81baa0, #46a39c) border-box;
+                linear-gradient(to right, #81baa0, #48b4bb) border-box;
               & i {
                 margin-right: 10px;
               }
