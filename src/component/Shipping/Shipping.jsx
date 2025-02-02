@@ -34,7 +34,7 @@ const Shipping = () => {
 
         <div>
           <h3 className="text-lg font-bold">24/7 Customer Service</h3>
-          <p className="text-gray-600">Call us 24/7 at 01700-000000</p>
+          <p className="text-gray-600">Call us 24/7 at 017XX-XXXXXX</p>
         </div>
       </div>
     </div>
