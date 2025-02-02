@@ -1,13 +1,11 @@
+import Navbar from "./component/Navbar/Navbar";
 
 function App() {
- 
-
   return (
-   
-   <div>
-    <h1>hello</h1>
-   </div>
-  )
+    <div>
+      <Navbar />
+    </div>
+  );
 }
 
-export default App
+export default App;
