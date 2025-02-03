@@ -169,21 +169,21 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden text-center text-white bg-[#232442] shadow-md p-4">
-          <a href="/" className="block  p-2 rounded">
+          <Link href="/" className="block  p-2 rounded">
             Home
-          </a>
-          <a href="/shop" className="block p-2 ">
+          </Link>
+          <Link to="/shop" className="block p-2 ">
             Shop
-          </a>
-          <a href="/categories" className="block p-2">
+          </Link>
+          <Link to="/categories" className="block p-2">
             Categories
-          </a>
-          <a href="/blog" className="block p-2">
+          </Link>
+          <Link href="/blog" className="block p-2">
             Blog
-          </a>
-          <a href="/contact" className="block p-2">
+          </Link>
+          <Link href="/contact" className="block p-2">
             Contact
-          </a>
+          </Link>
         </div>
       )}
     </nav>
