@@ -7,6 +7,10 @@ import HomePage from "./pages/HomePage/HomePage.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
+import Blog from "./pages/Blog/Blog.jsx";
+import ShopPage from "./pages/ShopPage/ShopPage.jsx";
+import Categories from "./pages/Categories/Categories.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,18 +22,23 @@ const router = createBrowserRouter([
         path: "/",
         element: <HomePage />,
       },
-      // {
-      //   path: "/about",
-      //   element: <AboutPage />,
-      // },
-      // {
-      //   path: "/contact",
-      //   element: <ContactPage />,
-      // },
-      // {
-      //   path: "/products",
-      //   element: <AllProduct />,
-      // },
+      {
+        path: "/shop",
+        element: <ShopPage />,
+      },
+      {
+        path: "/categories",
+        element: <Categories />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+
       {
         path: "/login",
         element: <LoginPage />,
