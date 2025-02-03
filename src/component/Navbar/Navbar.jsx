@@ -127,12 +127,13 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <button
+            <Link
+              to="/login"
               onClick={handleLogin}
               className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB]  lg:px-7 px-4 py-2 rounded-md "
             >
               Login
-            </button>
+            </Link>
           )}
 
           {/* Mobile Menu Button */}
