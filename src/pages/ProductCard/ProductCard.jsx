@@ -1,75 +1,88 @@
-import { useState } from "react";
-import { RiFlashlightLine, RiFireLine, RiShiningLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
+import { products } from "../../../public/ProductData/ProductData";
 
-const cards = [
-  {
-    title: "Awesome Card 01",
-    description: "Gradient card, with bright edges that gives it a cool look.",
-    icon: <RiFlashlightLine className="text-4xl" />,
-    hue1: 210,
-    hue2: 238,
-  },
-  {
-    title: "Awesome Card 02",
-    description: "Gradient card, with bright edges that gives it a cool look.",
-    icon: <RiFireLine className="text-4xl" />,
-    hue1: 300,
-    hue2: 30,
-  },
-  {
-    title: "Awesome Card 03",
-    description: "Gradient card, with bright edges that gives it a cool look.",
-    icon: <RiShiningLine className="text-4xl" />,
-    hue1: 180,
-    hue2: 50,
-  },
-];
+const ProductCard = () => {
+  const navigate = useNavigate();
 
-export default function ProductCard() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-900">
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {cards.map((card, index) => (
-          <Card key={index} card={card} />
+    <div className="">
+      <h1 className="text-5xl font-bold text-center mt-28 mb-10">
+        Our Current <span className="text-[#48B4BB]">Flash Sales</span> Items
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-5 gap-2 lg:px-20 px-5 justify-center">
+        {products.slice(0, 8).map((product) => (
+          <div
+            key={product.id}
+            className="relative group border rounded-lg shadow-md p-4 bg-white overflow-hidden"
+          >
+            <div className="relative overflow-hidden rounded-md">
+              <img
+                src={product.Images}
+                alt={product.Title}
+                className="w-full object-cover rounded-md transition-all duration-300 group-hover:blur-sm"
+              />
+
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform -translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                  View Details
+                </button>
+                <button className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out delay-200">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <h2 className="text-lg font-semibold mt-2">{product.Title}</h2>
+            <div className="flex items-center mt-1">
+              {[...Array(5)].map((_, i) => (
+                <span key={i}>
+                  {i < product.Ratings ? (
+                    <span className="text-yellow-400">★</span>
+                  ) : (
+                    <span className="text-gray-300">★</span>
+                  )}
+                </span>
+              ))}
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <span className="text-xl font-bold">
+                  <span className="font-bold text-2xl">৳</span>
+                  {product.Price}
+                </span>
+                {product.oldPrice && (
+                  <span className="text-gray-500 line-through ml-2">
+                    <span className="font-bold text-xl">৳</span>
+                    {product.oldPrice}
+                  </span>
+                )}
+              </div>
+              <div>
+                {product.discount && (
+                  <div className="text-[#48B4BB] text-sm rounded-md">
+                    Save {product.discount}%
+                  </div>
+                )}
+              </div>
+            </div>
+            <button className="mt-3 w-full bg-[#48B4BB] border font-bold text-white py-2 rounded-md hover:bg-white hover:text-[#48B4BB] hover:border-[#48B4BB]">
+              Order Now
+            </button>
+          </div>
         ))}
       </div>
-    </div>
-  );
-}
 
-function Card({ card }) {
-  const { title, description, icon, hue1, hue2 } = card;
-  const [hovered, setHovered] = useState(false);
-
-  return (
-    <div
-      className="relative flex flex-col items-center p-10 text-white text-center border-4 border-transparent rounded-2xl overflow-hidden transition-all duration-300"
-      style={{
-        background: `linear-gradient(hsl(${hue1}, 85%, 70%) 0%, hsl(${hue2}, 70%, 55%) 100%)`,
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="relative z-10 flex flex-col items-center">
-        <div className="w-36 h-36 rounded-2xl bg-gradient-to-r from-blue-900 to-indigo-600 flex items-center justify-center">
-          <div className="w-28 h-28 bg-gradient-to-r from-blue-700 to-indigo-500 rounded-xl flex items-center justify-center">
-            <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-400 rounded-lg flex items-center justify-center">
-              {icon}
-            </div>
-          </div>
-        </div>
-        <h2 className="mt-4 text-2xl font-bold">{title}</h2>
-        <p className="mt-2 text-sm">{description}</p>
-        <a
-          href="#"
-          className="mt-4 px-5 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-300 transition"
+      {/* See More Button */}
+      <div className="text-center mt-10">
+        <button
+          onClick={() => navigate("/products")} // Redirect to the Products page
+          className="bg-[#48B4BB] text-white font-bold px-6 py-2 mb-10 rounded-md hover:bg-white hover:text-[#48B4BB] border border-[#48B4BB] transition-all duration-300"
         >
-          Continue learning
-        </a>
+          See All Product
+        </button>
       </div>
-      {hovered && (
-        <div className="absolute inset-0 bg-opacity-40 blur-3xl transition-all duration-300 scale-150" />
-      )}
     </div>
   );
-}
+};
+
+export default ProductCard;
