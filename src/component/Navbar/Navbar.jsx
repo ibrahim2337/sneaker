@@ -9,39 +9,51 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleProfile = () => setIsProfileOpen(!isProfileOpen);
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-    console.log("Search modal open:", !isSearchOpen); // Debug log
-  };
+  const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
   const handleLogin = () => {
     setIsLoggedIn(true);
-    setIsProfileOpen(true); // Open profile menu after login
+    setIsProfileOpen(true);
   };
   const handleLogout = () => setIsLoggedIn(false);
 
   return (
-    <nav className=" shadow-md relative z-10 bg-opacity-95h-20 text-white bg-[#232442]">
+    <nav className="shadow-md relative z-10 bg-opacity-95 h-20 text-white bg-[#232442]">
       <div className="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold ">
-          Cloth & Co.
+        <Link to="/" className="text-4xl font-bold">
+          Snea<span className="text-4xl font-bold text-[#48B4BB]">ker.</span>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <Link to="/" className="">
+          <Link
+            to="/"
+            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
+          >
             Home
           </Link>
-          <Link to="/shop" className="">
+          <Link
+            to="/shop"
+            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
+          >
             Shop
           </Link>
-          <Link to="/categories" className="">
+          <Link
+            to="/categories"
+            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
+          >
             Categories
           </Link>
-          <Link to="/blog" className="">
+          <Link
+            to="/blog"
+            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
+          >
             Blog
           </Link>
-          <Link to="/contact" className="">
+          <Link
+            to="/contact"
+            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
+          >
             Contact
           </Link>
         </div>
@@ -49,7 +61,10 @@ const Navbar = () => {
         {/* Right Section */}
         <div className="flex items-center space-x-4">
           {/* Search Icon */}
-          <button onClick={toggleSearch} className=" text-white">
+          <button
+            onClick={toggleSearch}
+            className="text-white hover:scale-110 transition-transform duration-200"
+          >
             <svg
               className="h-6 w-6"
               fill="none"
@@ -66,7 +81,10 @@ const Navbar = () => {
           </button>
 
           {/* Shopping Cart */}
-          <a href="/cart" className="text-white">
+          <a
+            href="/cart"
+            className="text-white hover:scale-110 transition-transform duration-200"
+          >
             <svg
               className="h-6 w-6"
               fill="none"
@@ -87,7 +105,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={toggleProfile}
-                className="text-white focus:outline-none"
+                className="text-white focus:outline-none hover:scale-110 transition-transform duration-200"
               >
                 <svg
                   className="h-6 w-6"
@@ -130,14 +148,17 @@ const Navbar = () => {
             <Link
               to="/login"
               onClick={handleLogin}
-              className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB]  lg:px-7 px-4 py-2 rounded-md "
+              className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB] lg:px-7 font-semibold px-4 py-2 rounded-md hover:scale-105 transition-transform duration-200"
             >
               Login
             </Link>
           )}
 
           {/* Mobile Menu Button */}
-          <button onClick={toggleMenu} className="md:hidden text-white">
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-white hover:scale-110 transition-transform duration-200"
+          >
             <svg
               className="h-6 w-6"
               fill="none"
@@ -169,19 +190,34 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden text-center text-white bg-[#232442] shadow-md p-4">
-          <Link href="/" className="block  p-2 rounded">
+          <Link
+            to="/"
+            className="block p-2 text-white hover:text-[#48B4BB] hover:scale-105 transition-transform duration-200"
+          >
             Home
           </Link>
-          <Link to="/shop" className="block p-2 ">
+          <Link
+            to="/shop"
+            className="block p-2 text-white hover:text-[#48B4BB] hover:scale-105 transition-transform duration-200"
+          >
             Shop
           </Link>
-          <Link to="/categories" className="block p-2">
+          <Link
+            to="/categories"
+            className="block p-2 text-white hover:text-[#48B4BB] hover:scale-105 transition-transform duration-200"
+          >
             Categories
           </Link>
-          <Link href="/blog" className="block p-2">
+          <Link
+            to="/blog"
+            className="block p-2 text-white hover:text-[#48B4BB] hover:scale-105 transition-transform duration-200"
+          >
             Blog
           </Link>
-          <Link href="/contact" className="block p-2">
+          <Link
+            to="/contact"
+            className="block p-2 text-white hover:text-[#48B4BB] hover:scale-105 transition-transform duration-200"
+          >
             Contact
           </Link>
         </div>
