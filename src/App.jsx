@@ -1,13 +1,11 @@
-import Banner from "./component/Banner/Banner";
+import { Outlet } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
-import Shipping from "./component/Shipping/Shipping";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Banner />
-      <Shipping />
+      <Outlet></Outlet>
     </div>
   );
 }

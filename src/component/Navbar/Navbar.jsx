@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,27 +23,27 @@ const Navbar = () => {
     <nav className=" shadow-md relative z-10 bg-opacity-95h-20 text-white bg-[#232442]">
       <div className="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
         {/* Logo */}
-        <a href="/" className="text-2xl font-bold ">
+        <Link to="/" className="text-2xl font-bold ">
           Cloth & Co.
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <a href="/" className="">
+          <Link to="/" className="">
             Home
-          </a>
-          <a href="/shop" className="">
+          </Link>
+          <Link to="/shop" className="">
             Shop
-          </a>
-          <a href="/categories" className="">
+          </Link>
+          <Link to="/categories" className="">
             Categories
-          </a>
-          <a href="/blog" className="">
+          </Link>
+          <Link to="/blog" className="">
             Blog
-          </a>
-          <a href="/contact" className="">
+          </Link>
+          <Link to="/contact" className="">
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Right Section */}
