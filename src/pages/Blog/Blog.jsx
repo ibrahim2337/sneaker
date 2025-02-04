@@ -78,22 +78,23 @@ const Blog = () => {
       {/* Modal */}
       {modalOpen && selectedPost && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-8 rounded-lg w-96">
+          <div className="bg-white p-8 rounded-lg w-3/4 max-w-screen-md relative">
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800"
+            >
+              &times; {/* X icon */}
+            </button>
             <img
               src={selectedPost.image}
               alt={selectedPost.title}
-              className="w-full h-56 object-cover rounded-md mb-6"
+              className="w-full lg:h-80 h-40 object-cover rounded-md mb-6"
             />
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
               {selectedPost.title}
             </h3>
             <p className="text-gray-600 mb-4">{selectedPost.description}</p>
-            <button
-              onClick={closeModal}
-              className="text-red-500 mt-4 inline-block hover:text-red-700"
-            >
-              Close
-            </button>
           </div>
         </div>
       )}
