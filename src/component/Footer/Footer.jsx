@@ -78,7 +78,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/returns"
+                  to="/return"
                   className="text-gray-400 hover:text-[#48B4BB] transition duration-200"
                 >
                   Returns

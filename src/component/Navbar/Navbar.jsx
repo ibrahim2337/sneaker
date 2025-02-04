@@ -62,6 +62,12 @@ const Navbar = () => {
           >
             Contact
           </Link>
+          <Link
+            to="/faq"
+            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
+          >
+            FAQ
+          </Link>
         </div>
 
         {/* Right Section */}

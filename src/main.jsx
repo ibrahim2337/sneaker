@@ -12,6 +12,9 @@ import Blog from "./pages/Blog/Blog.jsx";
 import ShopPage from "./pages/ShopPage/ShopPage.jsx";
 import Categories from "./pages/Categories/Categories.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
+import FAQ from "./pages/FAQ/FAQ.jsx";
+import ReturnPolicy from "./pages/ReturnPolicy/ReturnPolicy.jsx";
+import ShoppingPolicy from "./pages/ShippingPolicy/ShippingPolicy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +53,18 @@ const router = createBrowserRouter([
       {
         path: "/product-details",
         element: <ProductDetails />,
+      },
+      {
+        path: "/faq",
+        element: <FAQ />,
+      },
+      {
+        path: "/return",
+        element: <ReturnPolicy />,
+      },
+      {
+        path: "/shipping",
+        element: <ShoppingPolicy />,
       },
     ],
   },
