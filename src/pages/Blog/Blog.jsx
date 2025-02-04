@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Blog = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,7 +23,7 @@ const Blog = () => {
     },
     {
       id: 3,
-      title: "How to Choose the Right Basketball Shoes",
+      title: "How to Choose the Right Basketball",
       image:
         "https://demo.posthemes.com/pos_sneaker/140-large_default/puma-rs-x.jpg",
       description:
@@ -56,7 +56,7 @@ const Blog = () => {
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-56 object-cover rounded-md mb-6"
+                className="w-full h-56 md:h-40 object-cover rounded-md mb-6"
               />
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 {post.title}
@@ -89,7 +89,7 @@ const Blog = () => {
             <img
               src={selectedPost.image}
               alt={selectedPost.title}
-              className="w-full lg:h-80 h-40 object-cover rounded-md mb-6"
+              className="w-full lg:h-80 md:h-72 h-40 object-cover rounded-md mb-6"
             />
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
               {selectedPost.title}
