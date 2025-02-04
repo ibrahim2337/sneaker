@@ -1,5 +1,3 @@
-import React from "react";
-
 const CustomerSupport = () => {
   return (
     <section className="bg-gray-100 py-12 px-5 lg:px-20">
