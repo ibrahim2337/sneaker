@@ -56,7 +56,7 @@ const Blog = () => {
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-56 md:h-40 object-cover rounded-md mb-6"
+                className="w-full lg:h-72 h-56 md:h-40 object-cover rounded-md mb-6"
               />
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 {post.title}
