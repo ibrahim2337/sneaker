@@ -9,7 +9,7 @@ const ProductCard = () => {
       <h1 className="text-5xl font-bold text-center mt-8 mb-10">
         Our Current <span className="text-[#48B4BB]">Flash Sales</span> Items
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-5 gap-2 lg:px-20 px-5 justify-center">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 lg:gap-5 gap-2 lg:px-20 px-5 justify-center">
         {products.slice(0, 8).map((product) => (
           <div
             key={product.id}
