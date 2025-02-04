@@ -2,15 +2,15 @@ import React from "react";
 
 const ShoppingPolicy = () => {
   return (
-    <section className="bg-gray-100 py-12 px-5 lg:px-20">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">
+    <section className="bg-gray-100 py-12 lg:px-20 px-5">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-[#232442] text-center mb-6">
           Shopping Policy in Bangladesh
         </h2>
 
         <div className="space-y-8 text-left">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               1. Eligibility for Shopping
             </h3>
             <p className="text-gray-600">
@@ -20,8 +20,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               2. Product Availability
             </h3>
             <p className="text-gray-600">
@@ -32,8 +32,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               3. Currency and Payments
             </h3>
             <p className="text-gray-600">
@@ -51,8 +51,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               4. Order Processing & Confirmation
             </h3>
             <p className="text-gray-600">
@@ -66,8 +66,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               5. Shipping & Delivery
             </h3>
             <p className="text-gray-600">
@@ -83,8 +83,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               6. Returns & Exchanges
             </h3>
             <p className="text-gray-600">
@@ -103,8 +103,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               7. Discounts & Promotions
             </h3>
             <p className="text-gray-600">
@@ -119,8 +119,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               8. Customer Support
             </h3>
             <p className="text-gray-600">
@@ -141,8 +141,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               9. Privacy & Data Protection
             </h3>
             <p className="text-gray-600">
@@ -153,8 +153,8 @@ const ShoppingPolicy = () => {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
               10. Policy Changes
             </h3>
             <p className="text-gray-600">

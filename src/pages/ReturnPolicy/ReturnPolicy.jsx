@@ -83,9 +83,13 @@ const ReturnPolicy = () => {
               please don’t hesitate to reach out to our customer support team.
               We&apos;re here to help!
             </p>
-            <p className="text-blue-500 underline mt-2">
-              <a href="/contact">Contact Support</a>
-            </p>
+
+            <a
+              href="/contact"
+              className="text-[#48B4BB] font-semibold hover:text-[#235f63] transition duration-200"
+            >
+              Contact Support
+            </a>
           </div>
         </div>
       </div>

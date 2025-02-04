@@ -15,6 +15,7 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import FAQ from "./pages/FAQ/FAQ.jsx";
 import ReturnPolicy from "./pages/ReturnPolicy/ReturnPolicy.jsx";
 import ShoppingPolicy from "./pages/ShippingPolicy/ShippingPolicy.jsx";
+import CustomerSupport from "./pages/CustomerSupport/CustomerSupport.jsx";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/shipping",
         element: <ShoppingPolicy />,
+      },
+      {
+        path: "/support",
+        element: <CustomerSupport />,
       },
     ],
   },
