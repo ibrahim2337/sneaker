@@ -6,6 +6,7 @@ const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleProfile = () => setIsProfileOpen(!isProfileOpen);
@@ -14,7 +15,12 @@ const Navbar = () => {
     setIsLoggedIn(true);
     setIsProfileOpen(true);
   };
+
   const handleLogout = () => setIsLoggedIn(false);
+  const handleSearch = () => {
+    console.log("Searching for:", searchQuery);
+    setIsSearchOpen(false); // Close the modal after search
+  };
 
   return (
     <nav className="shadow-md relative z-10 bg-opacity-95 h-20 text-white bg-[#232442]">
@@ -178,12 +184,52 @@ const Navbar = () => {
 
       {/* Search Modal */}
       {isSearchOpen && (
-        <div className="absolute top-full left-0 w-full shadow-md p-4 z-50">
-          <input
-            type="text"
-            placeholder="Search products..."
-            className="w-full px-4 py-2 border border-white text-black rounded-lg focus:outline-none focus:ring-2"
-          />
+        <div className="absolute  top-20 lg:left-80 w-full lg:w-3/5 bg-[#232442] text-white shadow-md p-4 transform transition-all ease-out duration-100">
+          <div className="flex items-center">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search products..."
+              className="w-full px-4 py-2 border border-white text-black rounded-lg focus:outline-none focus:ring-2"
+            />
+            <button
+              onClick={handleSearch}
+              className="ml-2 text-white hover:scale-110 transition-transform duration-200"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={toggleSearch}
+              className="ml-2 text-white hover:scale-110 transition-transform duration-200"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       )}
 
