@@ -1,22 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// import { AuthContext } from "../../provider/AuthProvider";
+// import { useContext } from "react";
 
 const Navbar = () => {
+  // const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleProfile = () => setIsProfileOpen(!isProfileOpen);
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-    setIsProfileOpen(true);
-  };
 
-  const handleLogout = () => setIsLoggedIn(false);
   const handleSearch = () => {
     console.log("Searching for:", searchQuery);
     setIsSearchOpen(false); // Close the modal after search
@@ -113,58 +108,21 @@ const Navbar = () => {
           </a>
 
           {/* Profile / Login Button */}
-          {isLoggedIn ? (
-            <div className="relative">
-              <button
-                onClick={toggleProfile}
-                className="text-white focus:outline-none hover:scale-110 transition-transform duration-200"
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-              </button>
-              {isProfileOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
-                  <a
-                    href="/profile"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Profile
-                  </a>
-                  <a
-                    href="/orders"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Orders
-                  </a>
-                  <button
-                    onClick={handleLogout}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left"
-                  >
-                    Logout
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              onClick={handleLogin}
+          {/* {user && user?.email ? ( */}
+          {/* <button
+              onClick={logOut}
               className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB] lg:px-7 font-semibold px-4 py-2 rounded-md hover:scale-105 transition-transform duration-200"
             >
-              Login
-            </Link>
-          )}
+              Log Out
+            </button>
+          ) : ( */}
+          <Link
+            to="/login"
+            className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB] lg:px-7 font-semibold px-4 py-2 rounded-md hover:scale-105 transition-transform duration-200"
+          >
+            Login
+          </Link>
+          {/* )} */}
 
           {/* Mobile Menu Button */}
           <button
