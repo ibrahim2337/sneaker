@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
-
 const LoginPage = ({ setIsLoginOpen, setIsRegisterOpen }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="relative bg-gray-300 p-8 max-w-md w-full rounded-xl shadow-lg">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70">
+      <div className="relative bg-gray-50 bg-opacity-10 p-8 max-w-md w-full rounded-xl shadow-lg">
         {/* Close Button */}
         <button
           onClick={() => setIsLoginOpen(false)}
-          className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+          className="absolute top-2 right-2 bg-[#48B4BB] text-white rounded-full w-6 h-6 flex items-center justify-center"
         >
           ✕
         </button>
@@ -17,7 +15,7 @@ const LoginPage = ({ setIsLoginOpen, setIsRegisterOpen }) => {
         </h1>
         <form className="space-y-6 mt-4">
           <div className="space-y-1 text-sm">
-            <label className="block text-black">Email</label>
+            <label className="block text-sm font-semibold">Email</label>
             <input
               type="text"
               name="email"
@@ -26,7 +24,7 @@ const LoginPage = ({ setIsLoginOpen, setIsRegisterOpen }) => {
             />
           </div>
           <div className="space-y-1 text-sm">
-            <label className="block text-black">Password</label>
+            <label className="block text-sm font-semibold">Password</label>
             <input
               type="password"
               name="password"
@@ -34,7 +32,10 @@ const LoginPage = ({ setIsLoginOpen, setIsRegisterOpen }) => {
               className="w-full px-4 py-3 rounded-md text-black border"
             />
             <div className="flex justify-end text-xs">
-              <a href="#" className="text-blue-600 hover:underline">
+              <a
+                href="#"
+                className="text-blue-600 text-sm font-semibold hover:underline"
+              >
                 Forgot Password?
               </a>
             </div>
@@ -44,14 +45,14 @@ const LoginPage = ({ setIsLoginOpen, setIsRegisterOpen }) => {
           </button>
         </form>
 
-        <p className="text-xs text-center text-black mt-4">
+        <p className="text-sm font-semibold text-center mt-4">
           Don&apos;t have an account?{" "}
           <button
             onClick={() => {
               setIsLoginOpen(false);
               setIsRegisterOpen(true);
             }}
-            className="text-blue-700 underline"
+            className="text-blue-700 text-sm font-semibold underline"
           >
             Register Now
           </button>
