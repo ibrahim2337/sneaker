@@ -17,15 +17,14 @@ const ProductCard = () => {
           >
             <div className="relative overflow-hidden rounded-md">
               <img
-                src={product.Images}
-                alt={product.Title}
+                src={product.images}
+                alt={product.title}
                 className="w-full object-cover rounded-md transition-all duration-300 group-hover:blur-sm"
               />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Link
-                  to={`/product-details/${product._id}`}
-                  state={{ product }}
+                  to={`/product-details/${product.id}`}
                   className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform -translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out"
                 >
                   View Details
@@ -36,11 +35,11 @@ const ProductCard = () => {
               </div>
             </div>
 
-            <h2 className="text-lg font-semibold mt-2">{product.Title}</h2>
+            <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
             <div className="flex items-center mt-1">
               {[...Array(5)].map((_, i) => (
                 <span key={i}>
-                  {i < product.Ratings ? (
+                  {i < product.ratings ? (
                     <span className="text-yellow-400">★</span>
                   ) : (
                     <span className="text-gray-300">★</span>
@@ -52,12 +51,12 @@ const ProductCard = () => {
               <div>
                 <span className="text-xl font-bold">
                   <span className="font-bold text-2xl">৳</span>
-                  {product.Price}
+                  {product.price}
                 </span>
-                {product.oldPrice && (
+                {product.old_price && (
                   <span className="text-gray-500 line-through ml-2">
                     <span className="font-bold text-xl">৳</span>
-                    {product.oldPrice}
+                    {product.old_price}
                   </span>
                 )}
               </div>

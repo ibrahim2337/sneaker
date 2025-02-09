@@ -51,10 +51,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: <RegisterPage />,
       },
-      {
-        path: "/product-details",
-        element: <ProductDetails />,
-      },
+
       {
         path: "/faq",
         element: <FAQ />,
@@ -70,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/support",
         element: <CustomerSupport />,
+      },
+      {
+        path: "/product-details/:id",
+        element: <ProductDetails />,
       },
     ],
   },

@@ -12,8 +12,8 @@ const Shipping = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-bold">Free Shipping</h3>
-          <p className="text-gray-600">On orders over 2000+</p>
+          <h3 className=" font-bold">Free Shipping</h3>
+          <p className="text-gray-600">2000+ orders</p>
         </div>
       </div>
 
@@ -23,7 +23,7 @@ const Shipping = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-bold">Cash On Delivery</h3>
+          <h3 className=" font-bold">Cash On Delivery</h3>
           <p className="text-gray-600"> 100% guarantee</p>
         </div>
       </div>
@@ -34,8 +34,8 @@ const Shipping = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-bold">Customer Service</h3>
-          <p className="text-gray-600">24/7 at 017XX-XXXXXX</p>
+          <h3 className=" font-bold">Customer Service</h3>
+          <p className="text-gray-600">01734-454539</p>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ const Shipping = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-bold">Return Policy</h3>
+          <h3 className=" font-bold">Return Policy</h3>
           <p className="text-gray-600">Within 7 days</p>
         </div>
       </div>
