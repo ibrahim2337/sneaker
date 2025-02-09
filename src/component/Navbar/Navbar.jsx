@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { AuthContext } from "../../provider/AuthProvider";
-// import { useContext } from "react";
+import LoginPage from "../../pages/LoginPage/LoginPage";
+import RegisterPage from "../../pages/RegisterPage/RegisterPage";
 
 const Navbar = () => {
-  // const { user, logOut } = useContext(AuthContext);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -116,13 +117,35 @@ const Navbar = () => {
               Log Out
             </button>
           ) : ( */}
-          <Link
+          {/* <Link
             to="/login"
             className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB] lg:px-7 font-semibold px-4 py-2 rounded-md hover:scale-105 transition-transform duration-200"
           >
             Login
-          </Link>
-          {/* )} */}
+          </Link> */}
+
+          <button
+            onClick={() => setIsLoginOpen(true)}
+            className="bg-gradient-to-r from-[#81baa0] to-[#48B4BB] lg:px-7 font-semibold px-4 py-2 rounded-md hover:scale-105 transition-transform duration-200"
+          >
+            Login
+          </button>
+
+          {/* Login Modal */}
+          {isLoginOpen && (
+            <LoginPage
+              setIsLoginOpen={setIsLoginOpen}
+              setIsRegisterOpen={setIsRegisterOpen}
+            />
+          )}
+
+          {/* Register Modal */}
+          {isRegisterOpen && (
+            <RegisterPage
+              setIsRegisterOpen={setIsRegisterOpen}
+              setIsLoginOpen={setIsLoginOpen}
+            />
+          )}
 
           {/* Mobile Menu Button */}
           <button

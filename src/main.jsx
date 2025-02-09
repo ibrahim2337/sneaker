@@ -16,6 +16,7 @@ import ReturnPolicy from "./pages/ReturnPolicy/ReturnPolicy.jsx";
 import ShoppingPolicy from "./pages/ShippingPolicy/ShippingPolicy.jsx";
 import CustomerSupport from "./pages/CustomerSupport/CustomerSupport.jsx";
 import AuthProvider from "./provider/AuthProvider";
+import CartModel from "./pages/CartModel/CartModel.jsx";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: "/product-details/:id",
         element: <ProductDetails />,
+      },
+      {
+        path: "/cart",
+        element: <CartModel />,
       },
     ],
   },

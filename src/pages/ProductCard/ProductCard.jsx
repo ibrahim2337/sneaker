@@ -29,7 +29,10 @@ const ProductCard = () => {
                 >
                   View Details
                 </Link>
-                <button className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out delay-200">
+                <button
+                  to="/cart"
+                  className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out delay-200"
+                >
                   Add to Cart
                 </button>
               </div>
