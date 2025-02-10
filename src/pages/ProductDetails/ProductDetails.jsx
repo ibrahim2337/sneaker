@@ -27,7 +27,7 @@ const ProductDetails = () => {
     <div>
       <section className="bg-gray-50 min-h-screen py-8">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Images */}
             <div>
               <div className="relative group">

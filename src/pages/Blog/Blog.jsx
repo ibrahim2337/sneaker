@@ -66,7 +66,7 @@ const Blog = () => {
               </p>
               <button
                 onClick={() => openModal(post)}
-                className="text-blue-500 mt-4 inline-block"
+                className="px-6  py-2 mt-5 bg-[#48B4BB] border font-bold text-white rounded-md hover:bg-white hover:text-[#48B4BB] hover:border-[#48B4BB]"
               >
                 Read More
               </button>
@@ -82,9 +82,9 @@ const Blog = () => {
             {/* Close button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800"
+              className="absolute top-2 right-2 bg-[#48B4BB] text-white rounded-full w-6 h-6 flex items-center justify-center"
             >
-              &times; {/* X icon */}
+              ✕
             </button>
             <img
               src={selectedPost.image}

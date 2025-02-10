@@ -9,7 +9,6 @@ const HomePage = () => {
       <Banner />
       <Shipping />
       <ProductCard />
-
       <ShoeInformation />
     </div>
   );
