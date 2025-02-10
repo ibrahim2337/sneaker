@@ -1,7 +1,7 @@
 const LoginPage = ({ setIsLoginOpen, setIsRegisterOpen }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70">
-      <div className="relative bg-gray-50 bg-opacity-10 p-8 max-w-md w-full rounded-xl shadow-lg">
+      <div className="relative bg-[#48B4BB] bg-opacity-30 p-8 max-w-md w-full rounded-xl shadow-lg">
         {/* Close Button */}
         <button
           onClick={() => setIsLoginOpen(false)}
