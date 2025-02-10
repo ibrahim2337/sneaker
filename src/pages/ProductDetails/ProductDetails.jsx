@@ -1,5 +1,4 @@
-import { div } from "motion/react-client";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 
 const ProductDetails = () => {
@@ -12,12 +11,17 @@ const ProductDetails = () => {
     old_price: 4429,
     images: [
       "https://demo.posthemes.com/pos_sneaker/137-large_default/nike-air-max-thea.jpg",
+      "https://demo.posthemes.com/pos_sneaker/138-large_default/nike-air-max-90.jpg",
+      "https://demo.posthemes.com/pos_sneaker/139-large_default/nike-air-force.jpg",
+      "https://demo.posthemes.com/pos_sneaker/140-large_default/nike-roshe-run.jpg",
     ],
     description:
       "The Air Jordan XI Retro reflects the brand’s decade-long expertise in the fashion industry, showcasing a deep understanding of design trends and customer preferences. Known for its focus on quality and style, the sneaker combines aesthetics with functionality, ensuring both durability and appeal. As part of a well-crafted collection, it highlights the brand’s reputation for consistency and high-quality craftsmanship. Designed with attention to detail, it aligns with the brand’s overall aesthetic standards. Its timeless appeal blends classic and contemporary styles, making it a versatile choice. This retro sneaker is a testament to the brand’s commitment to excellence since 2010.",
     brand: "Beurer",
     ratings: "4.5",
   };
+
+  const [mainImage, setMainImage] = useState(product.images[0]);
 
   return (
     <div>
@@ -30,59 +34,28 @@ const ProductDetails = () => {
                 {/* Main Product Image */}
                 <div className="overflow-hidden rounded-lg">
                   <img
-                    src={product.images[0]}
+                    src={mainImage}
                     alt={product.title}
-                    className="w-full h-auto transition-transform duration-300 ease-in-out transform group-hover:scale-110"
+                    className="w-full h-auto lg:h-[500px] object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-110"
                   />
                 </div>
-                {/* Zoom Button */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition">
-                  <button
-                    className="bg-white p-4 rounded-full shadow-lg flex items-center space-x-2"
-                    onClick={() => alert("Zoom feature coming soon!")}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-gray-800"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M11 11l-3.5-3.5m0 0L7 7m3.5 3.5L21 21M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"
-                      />
-                    </svg>
-                    <span className="text-gray-800 font-semibold">Zoom</span>
-                  </button>
-                </div>
+              </div>
+              {/* Thumbnail Images */}
+              <div className="flex space-x-4 mt-4 overflow-x-auto">
+                {product.images.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Thumbnail ${index + 1}`}
+                    className="w-16 h-16 md:w-24 md:h-24 lg:w-40 lg:h-40 rounded-lg cursor-pointer border-2 border-transparent hover:border-gray-800 transition-all"
+                    onClick={() => setMainImage(img)}
+                  />
+                ))}
               </div>
             </div>
 
             {/* Right Column - Details */}
             <div>
-              <Link
-                to="/"
-                className="text-gray-500 mb-4 flex items-center space-x-2 hover:text-gray-800"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-                <span>Back</span>
-              </Link>
               <h1 className="text-3xl font-bold text-gray-800">
                 {product.title}
               </h1>
@@ -102,35 +75,6 @@ const ProductDetails = () => {
                 </p>
               </div>
 
-              {/* Ratings */}
-              <div className="flex items-center mt-4">
-                <span className="text-yellow-400 flex space-x-1">
-                  {Array.from({ length: 5 }, (_, i) =>
-                    i < Math.floor(product.ratings) ? (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 .587l3.668 7.453 8.332 1.151-6.064 5.945 1.478 8.317L12 18.897 4.586 23.453l1.478-8.317L0 9.191l8.332-1.151z" />
-                      </svg>
-                    ) : (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-5 h-5 text-gray-300"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 .587l3.668 7.453 8.332 1.151-6.064 5.945 1.478 8.317L12 18.897 4.586 23.453l1.478-8.317L0 9.191l8.332-1.151z" />
-                      </svg>
-                    )
-                  )}
-                </span>
-                <p className="text-gray-500 ml-2">{product.ratings}/5</p>
-              </div>
               {/* Size Options */}
               <div className="mt-6">
                 <h3 className="text-lg font-semibold text-gray-800">Size</h3>
@@ -158,14 +102,14 @@ const ProductDetails = () => {
               </div>
 
               {/* Add to Cart Button */}
-              <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 mt-8">
+              <button className=" px-6  py-2 mt-5 bg-[#48B4BB] border font-bold text-white rounded-md hover:bg-white hover:text-[#48B4BB] hover:border-[#48B4BB]">
                 Add to Cart
               </button>
             </div>
           </div>
         </div>
       </section>
-      <ProductCard></ProductCard>
+      <ProductCard />
     </div>
   );
 };
