@@ -24,7 +24,7 @@ const ProductCard = () => {
 
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Link
-                  to={`/product-details/${product.id}`}
+                  to="/product-details"
                   className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform -translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out"
                 >
                   View Details
