@@ -18,6 +18,7 @@ import CustomerSupport from "./pages/CustomerSupport/CustomerSupport.jsx";
 // import AuthProvider from "./provider/AuthProvider";
 import CartModel from "./pages/CartModel/CartModel.jsx";
 import AdminPanel from "./dashboard/AdminPanel/AdminPanel.jsx";
+import ProductList from "./dashboard/ProductList/ProductList.jsx";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "/admin-panel",
         element: <AdminPanel />,
+      },
+      {
+        path: "/product-list",
+        element: <ProductList />,
       },
     ],
   },
