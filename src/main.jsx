@@ -15,8 +15,9 @@ import FAQ from "./pages/FAQ/FAQ.jsx";
 import ReturnPolicy from "./pages/ReturnPolicy/ReturnPolicy.jsx";
 import ShoppingPolicy from "./pages/ShippingPolicy/ShippingPolicy.jsx";
 import CustomerSupport from "./pages/CustomerSupport/CustomerSupport.jsx";
-import AuthProvider from "./provider/AuthProvider";
+// import AuthProvider from "./provider/AuthProvider";
 import CartModel from "./pages/CartModel/CartModel.jsx";
+import AdminPanel from "./dashboard/AdminPanel/AdminPanel.jsx";
 
 const router = createBrowserRouter([
   {
@@ -77,14 +78,16 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <CartModel />,
       },
+      {
+        path: "/admin-panel",
+        element: <AdminPanel />,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <div>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <RouterProvider router={router} />
   </div>
 );

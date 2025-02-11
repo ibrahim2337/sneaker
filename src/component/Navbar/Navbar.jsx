@@ -64,6 +64,12 @@ const Navbar = () => {
           >
             FAQ
           </Link>
+          <Link
+            to="/admin-panel"
+            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
+          >
+            AdminPanel
+          </Link>
         </div>
 
         {/* Right Section */}
