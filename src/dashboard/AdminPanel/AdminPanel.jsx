@@ -52,7 +52,7 @@ const AdminPanel = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-3 gap-6 mt-6">
+        <div className="grid lg:grid-cols-3 gap-6 mt-6">
           <div className="bg-white p-4 rounded-lg shadow-md">
             <p className="text-gray-500">Expense</p>
             <p className="text-2xl font-bold">$18,725</p>
