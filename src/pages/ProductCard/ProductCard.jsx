@@ -9,7 +9,7 @@ const ProductCard = () => {
       <h1 className="text-5xl font-bold text-center mt-8 mb-10">
         Our Current <span className="text-[#48B4BB]">Flash Sales</span> Items
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 lg:gap-5 gap-2 lg:px-20 px-5 justify-center">
+      <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 lg:gap-5 gap-2 lg:px-20 px-5 justify-center">
         {products.slice(0, 8).map((product) => (
           <div
             key={product.id}
@@ -25,13 +25,13 @@ const ProductCard = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Link
                   to="/product-details"
-                  className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform -translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out"
+                  className="bg-[#48B4BB] text-white md:px-4 md:py-2 md:text-lg  px-2 py-1 text-xs rounded-md transform -translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out"
                 >
                   View Details
                 </Link>
                 <button
                   to="/cart"
-                  className="bg-[#48B4BB] text-white px-4 py-2 rounded-md transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out delay-200"
+                  className="bg-[#48B4BB] text-white  md:px-4 md:py-2 md:text-lg  px-2 py-1 text-xs rounded-md transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out delay-200"
                 >
                   Add to Cart
                 </button>
@@ -52,20 +52,20 @@ const ProductCard = () => {
             </div>
             <div className="flex justify-between items-center">
               <div>
-                <span className="text-xl font-bold">
-                  <span className="font-bold text-2xl">৳</span>
+                <span className="md:text-xl sm:text-xs font-bold">
+                  <span className="font-bold md:text-xl sm:text-sx">৳</span>
                   {product.price}
                 </span>
                 {product.old_price && (
-                  <span className="text-gray-500 line-through ml-2">
-                    <span className="font-bold text-xl">৳</span>
+                  <span className="text-gray-500 line-through ml-2 md:text-xl sm:text-xs">
+                    <span className="font-bold md:text-xl sm:text-xs">৳</span>
                     {product.old_price}
                   </span>
                 )}
               </div>
               <div>
                 {product.discount && (
-                  <div className="text-[#48B4BB] text-sm rounded-md">
+                  <div className="text-[#48B4BB] text-sm rounded-md hidden">
                     Save {product.discount}%
                   </div>
                 )}

@@ -15,7 +15,6 @@ import FAQ from "./pages/FAQ/FAQ.jsx";
 import ReturnPolicy from "./pages/ReturnPolicy/ReturnPolicy.jsx";
 import ShoppingPolicy from "./pages/ShippingPolicy/ShippingPolicy.jsx";
 import CustomerSupport from "./pages/CustomerSupport/CustomerSupport.jsx";
-// import AuthProvider from "./provider/AuthProvider";
 import CartModel from "./pages/CartModel/CartModel.jsx";
 import AdminPanel from "./dashboard/AdminPanel/AdminPanel.jsx";
 import ProductList from "./dashboard/ProductList/ProductList.jsx";

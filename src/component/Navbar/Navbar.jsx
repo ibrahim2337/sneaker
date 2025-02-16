@@ -34,12 +34,7 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <Link
-            to="/shop"
-            className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
-          >
-            Shop
-          </Link>
+
           <Link
             to="/categories"
             className="font-semibold hover:text-[#48B4BB]  transition cursor-pointer"
