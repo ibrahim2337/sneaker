@@ -38,7 +38,9 @@ const ProductCard = () => {
               </div>
             </div>
 
-            <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
+            <h2 className="md:text-xl sm:text-xs font-semibold mt-2">
+              {product.title}
+            </h2>
             <div className="flex items-center mt-1">
               {[...Array(5)].map((_, i) => (
                 <span key={i}>
