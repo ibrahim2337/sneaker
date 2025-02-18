@@ -38,7 +38,7 @@ const ProductCard = () => {
               </div>
             </div>
 
-            <h2 className="md:text-xl sm:text-xs font-semibold mt-2">
+            <h2 className="md:text-xl sm:text-xs font-semibold mt-2 line-clamp-1">
               {product.title}
             </h2>
             <div className="flex items-center mt-1">
