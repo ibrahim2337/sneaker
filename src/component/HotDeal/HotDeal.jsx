@@ -42,7 +42,7 @@ const HotDeal = () => {
   }, []);
 
   return (
-    <div className="relative h-[500px] overflow-hidden rounded-lg">
+    <div className="relative h-[500px] overflow-hidden ">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
